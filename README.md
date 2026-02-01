@@ -21,26 +21,18 @@ The system uses the following canonical units:
 - **Mass**: Solar mass ($M_{\odot}$) = $1.9885\times10^{30}$ kg
 
 The gravitational parameter $\mu$ in these units is:
-$$
-\mu = 1 \quad [AU^3/yr^2]
-$$
+$$\mu = 1 \quad [AU^3/yr^2]$$
 
 ### Two-Body Propagation
 The core dynamics use the two-body equation:
-$$
-\ddot{\vec{r}} = -\frac{\mu}{r^3}\vec{r}
-$$
+$$\ddot{\vec{r}} = -\frac{\mu}{r^3}\vec{r}$$
 where $\vec{r} = [x, y, z]^T$ is the position vector in AU.
 
 The state vector is defined as:
-$$
-\vec{S} = [x, y, z, v_x, v_y, v_z]^T
-$$
+$$\vec{S} = [x, y, z, v_x, v_y, v_z]^T$$
 
 Propagation from time $t_0$ to $t_f$ is performed:
-$$
-\vec{S}(t_f) = {prop2b}(\mu, \vec{S}(t_0), t_f - t_0)
-$$
+$$\vec{S}(t_f) = {prop2b}(\mu, \vec{S}(t_0), t_f - t_0)$$
 
 ### Optimization Problem
 Given:
@@ -49,9 +41,7 @@ Given:
 - Transfer time: $T$ (years)
 
 Find initial velocity $\vec{v}_1 = [v_x, v_y, v_z]^T$ that minimizes:
-$$
-J(\vec{v}_1) = \|\vec{r}(T) - \vec{r}_2\|
-$$
+$$J(\vec{v}_1) = \|\vec{r}(T) - \vec{r}_2\|$$
 
 where $\vec{r}(T)$ is the propagated position at time $T$.
 
@@ -90,9 +80,7 @@ The solver accepts:
 
 ### Orbital Elements Calculation
 After finding the optimal velocity, the orbital elements are computed:
-$$
-[a, e, i, \Omega, \omega, M_0] = {oscelt}(\vec{S}_{{final}}, 0, \mu)
-$$
+$$[a, e, i, \Omega, \omega, M_0] = {oscelt}(\vec{S}_{{final}}, 0, \mu)$$
 
 where:
 

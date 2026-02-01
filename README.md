@@ -22,7 +22,7 @@ The system uses the following canonical units:
 
 The gravitational parameter $\mu$ in these units is:
 $$
-\mu = 1 \quad \text{[AU}^3/\text{yr}^2]
+\mu = 1 \quad [AU^3/yr^2]
 $$
 
 ### Two-Body Propagation
@@ -39,7 +39,7 @@ $$
 
 Propagation from time $t_0$ to $t_f$ is performed:
 $$
-\vec{S}(t_f) = \text{prop2b}(\mu, \vec{S}(t_0), t_f - t_0)
+\vec{S}(t_f) = {prop2b}(\mu, \vec{S}(t_0), t_f - t_0)
 $$
 
 ### Optimization Problem
@@ -91,7 +91,7 @@ The solver accepts:
 ### Orbital Elements Calculation
 After finding the optimal velocity, the orbital elements are computed:
 $$
-[a, e, i, \Omega, \omega, M_0] = \text{oscelt}(\vec{S}_{\text{final}}, 0, \mu)
+[a, e, i, \Omega, \omega, M_0] = {oscelt}(\vec{S}_{{final}}, 0, \mu)
 $$
 
 where:
